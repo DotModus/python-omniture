@@ -152,10 +152,14 @@ class Report(object):
                 for index, metric in enumerate(row['counts']):
                     if self.metrics[index].decimals > 0 or metric.find('.') >-1:
                         if metric == 'INF':
-                            metric = float('inf')
-                        data[str(self.metrics[index].id)] = float(metric)
+                            data[str(self.metrics[index].id)] = float('inf')
+                        else:
+                            data[str(self.metrics[index].id)] = float(metric)
                     else:
-                        data[str(self.metrics[index].id)] = int(metric)
+                        if metric == 'INF':
+                            data[str(self.metrics[index].id)] = float('inf')
+                        else:
+                            data[str(self.metrics[index].id)] = int(metric)
 
 
 
