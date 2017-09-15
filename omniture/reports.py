@@ -152,6 +152,8 @@ class Report(object):
                 for index, metric in enumerate(row['counts']):
                     try:
                         #decide what type of event
+                        if metric == 'INF':
+                            metric = float('inf')
                         if self.metrics[index].decimals > 0 or metric.find('.') >-1:
                             data[str(self.metrics[index].id)] = float(metric)
                         else:
