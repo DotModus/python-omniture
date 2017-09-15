@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+    from setuptools import setup, find_packages
 
 exec(open('omniture/version.py').read())
 setup(name='omniture',
@@ -8,7 +8,7 @@ setup(name='omniture',
       author_email='stijn@stdout.be',
       url='http://stdbrouw.github.com/python-omniture/',
       download_url='http://www.github.com/stdbrouw/python-omniture/tarball/master',
-      version=__version__,
+      version='0.5.3',
       license='MIT',
       packages=find_packages(),
       keywords='data analytics api wrapper adobe omniture',
